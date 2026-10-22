@@ -28,6 +28,14 @@ resource "aws_instance" "web" {
   vpc_security_group_ids = [var.security_group_id]
   key_name               = aws_key_pair.this.key_name
 
+  user_data = templatefile("${path.module}/templates/user_data.sh.tpl", {
+    repo_url     = var.repo_url
+    repo_branch  = var.repo_branch
+    server_label = "${var.project_name}-web-${count.index + 1}"
+  })
+
+  user_data_replace_on_change = true
+
   metadata_options {
     http_tokens = "required" # IMDSv2 obligatoire (bonne pratique de sécurité)
   }

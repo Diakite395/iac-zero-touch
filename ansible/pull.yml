@@ -1,0 +1,10 @@
+---
+- name: Configuration locale du serveur (ansible-pull)
+  hosts: localhost
+  connection: local
+  become: true
+
+  roles:
+    - common
+    - security
+    - nginx

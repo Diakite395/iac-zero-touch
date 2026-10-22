@@ -25,3 +25,13 @@ variable "public_key" {
   description = "Contenu de la clé publique SSH"
   type        = string
 }
+
+variable "repo_url" {
+  description = "URL HTTPS du dépôt Git contenant le code Ansible"
+  type        = string
+}
+
+variable "repo_branch" {
+  type    = string
+  default = "main"
+}

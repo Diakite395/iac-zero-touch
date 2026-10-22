@@ -21,4 +21,5 @@ module "compute" {
   subnet_ids        = module.network.public_subnet_ids
   security_group_id = module.security.web_sg_id
   public_key        = file(pathexpand(var.ssh_public_key_path))
+  repo_url = var.repo_url
 }

@@ -7,6 +7,7 @@
 <body>
   <h1>Déploiement Zero Touch</h1>
   <p>Serveur : <strong>{{ inventory_hostname }}</strong></p>
+  <p>Serveur : <strong>{{ server_label | default(inventory_hostname) }}</strong></p>
   <p>Hostname : {{ ansible_hostname }}</p>
   <p>Configuré automatiquement par Ansible.</p>
 </body>
