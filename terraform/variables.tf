@@ -22,10 +22,10 @@ variable "public_subnet_cidrs" {
   default     = ["10.0.1.0/24", "10.0.2.0/24"]
 }
 
-variable "admin_cidr" {
-  description = "Ton IP publique en /32 pour le SSH"
-  type        = string
-}
+# variable "admin_cidr" {
+#   description = "Ton IP publique en /32 pour le SSH"
+#   type        = string
+# }
 
 variable "ssh_public_key_path" {
   description = "Chemin de la clé publique SSH"
@@ -37,4 +37,15 @@ variable "repo_url" {
   description = "URL HTTPS du dépôt Git"
   type        = string
   default     = "https://github.com/Diakite395/iac-zero-touch.git"
+}
+
+variable "admin_cidr" {
+  description = "Ton IP publique en /32 pour le SSH"
+  type        = string
+  sensitive   = true
+}
+
+variable "ssh_public_key" {
+  description = "Contenu de la clé publique SSH"
+  type        = string
 }

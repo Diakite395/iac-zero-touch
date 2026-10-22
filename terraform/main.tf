@@ -20,6 +20,7 @@ module "compute" {
   project_name      = var.project_name
   subnet_ids        = module.network.public_subnet_ids
   security_group_id = module.security.web_sg_id
-  public_key        = file(pathexpand(var.ssh_public_key_path))
-  repo_url          = var.repo_url
+  # public_key        = file(pathexpand(var.ssh_public_key_path))
+  public_key = var.ssh_public_key
+  repo_url   = var.repo_url
 }
