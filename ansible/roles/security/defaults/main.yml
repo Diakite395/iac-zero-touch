@@ -1,0 +1,6 @@
+---
+security_ssh_port: 22
+security_allowed_tcp_ports:
+  - 22
+  - 80
+  - 443

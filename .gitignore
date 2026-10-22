@@ -6,3 +6,4 @@
 *.key
 .env
 crash.log
+ansible/inventory/hosts.ini

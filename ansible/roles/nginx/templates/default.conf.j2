@@ -1,0 +1,14 @@
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    server_name {{ nginx_server_name }};
+    root {{ nginx_web_root }};
+    index index.html;
+
+    server_tokens off;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
