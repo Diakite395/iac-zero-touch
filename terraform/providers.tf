@@ -6,5 +6,11 @@ provider "aws" {
       Project   = var.project_name
       ManagedBy = "terraform"
     }
+
+    tags = {
+      Project     = var.project_name
+      ManagedBy   = "terraform"
+      Environment = "demo"
+    }
   }
 }
