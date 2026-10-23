@@ -15,8 +15,8 @@ module "security" {
 }
 
 module "compute" {
-  source = "./modules/compute"
-
+  source            = "./modules/compute"
+  instance_count    = var.web_count
   project_name      = var.project_name
   subnet_ids        = module.network.public_subnet_ids
   security_group_id = module.security.web_sg_id
