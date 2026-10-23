@@ -53,7 +53,7 @@ variable "ssh_public_key" {
 variable "web_count" {
   description = "Nombre de serveurs web"
   type        = number
-  default     = 3
+  default     = 2
 
   validation {
     condition     = var.web_count >= 1 && var.web_count <= 6
