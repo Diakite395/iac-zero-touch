@@ -49,3 +49,14 @@ variable "ssh_public_key" {
   description = "Contenu de la clé publique SSH"
   type        = string
 }
+
+variable "web_count" {
+  description = "Nombre de serveurs web"
+  type        = number
+  default     = 2
+
+  validation {
+    condition     = var.web_count >= 1 && var.web_count <= 6
+    error_message = "web_count doit être compris entre 1 et 6."
+  }
+}
